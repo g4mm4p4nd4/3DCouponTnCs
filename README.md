@@ -16,7 +16,7 @@ Each coupon entitles the holder to request a single 3D printing project from Bea
 
 ## 4. Scheduling
 - Coupon holders must schedule their project request at least two weeks in advance.
-- Scheduling will be done via a Microsoft Form[https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZAAATogqhUMUpENjhXN1pJWDczVFdKSFZESkhROVRZWC4u&topview=Prefill].
+- Scheduling will be done via a Microsoft Form[(https://forms.office.com/r/BVrCDAT8cm?origin=lprLink)].
 
 ## 5. Project Commitment
 - Once a project is initiated using the coupon, no significant changes can be made to the project. The coupon will be forfeited, and the project will be considered in progress.
