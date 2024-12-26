@@ -1,4 +1,4 @@
-# 3DCouponToCs
+# 3DCouponTnCs
 Terms and Conditions of 3D Print Coupons
 
 # Terms and Conditions for 3D Printing Coupons
