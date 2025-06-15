@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  api:
+    build: ./backend
+    command: uvicorn flashintel.app:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+      - postgres
+  worker:
+    build: ./backend
+    command: celery -A flashintel.celery_app worker --loglevel=info
+    depends_on:
+      - redis
+      - postgres
+  redis:
+    image: redis:7-alpine
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app_db
+    ports:
+      - "5432:5432"
