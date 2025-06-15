@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  postgres:
+    # TODO: configuration for Postgres database
+  redis:
+    # TODO: configuration for Redis cache
+  api:
+    # TODO: configuration for API service
+  worker:
+    # TODO: configuration for background worker
+  web:
+    # TODO: configuration for frontend web service
