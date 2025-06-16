@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "work", "master"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install flake8 pytest
+          pip install -r backend/requirements.txt
+          pip install -r frontend/requirements.txt
+
+      - name: Lint backend
+        run: flake8 backend
+      - name: Lint frontend
+        run: flake8 frontend
+
+      - name: Test backend
+        run: pytest backend/tests
+      - name: Test frontend
+        run: pytest frontend/tests
+
+      - name: Build backend Docker image
+        run: docker build -t backend:ci ./backend
+      - name: Build frontend Docker image
+        run: docker build -t frontend:ci ./frontend

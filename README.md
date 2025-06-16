@@ -23,3 +23,13 @@ Each coupon entitles the holder to request a single 3D printing project from Bea
 
 ## 6. Agreement
 By using the coupon, the holder agrees to these terms, ensuring a smooth process and allowing adequate time for project completion.
+
+## Development
+To run the services locally you need Python 3.11 and Docker installed. Once the dependencies are available you can lint, test and build the Docker images using:
+
+```bash
+flake8 backend frontend
+pytest -q
+docker build -t backend ./backend
+docker build -t frontend ./frontend
+```

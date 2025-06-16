@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to registry
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+        run: |
+          echo "$DOCKER_PASSWORD" | docker login "$DOCKER_REGISTRY" -u "$DOCKER_USERNAME" --password-stdin
+
+      - name: Build backend image
+        run: |
+          docker build -t "$DOCKER_REGISTRY/backend:latest" ./backend
+      - name: Build frontend image
+        run: |
+          docker build -t "$DOCKER_REGISTRY/frontend:latest" ./frontend
+
+      - name: Push images
+        run: |
+          docker push "$DOCKER_REGISTRY/backend:latest"
+          docker push "$DOCKER_REGISTRY/frontend:latest"
