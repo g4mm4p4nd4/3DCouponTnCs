@@ -23,3 +23,18 @@ Each coupon entitles the holder to request a single 3D printing project from Bea
 
 ## 6. Agreement
 By using the coupon, the holder agrees to these terms, ensuring a smooth process and allowing adequate time for project completion.
+
+## Article API
+
+This repository includes a small FastAPI application providing two routes:
+
+- `GET /api/articles` – return recent articles with optional `category`, `date` and `urgency` query parameters for filtering.
+- `POST /api/articles` – add a new article which will be broadcast to connected WebSocket clients.
+- `WS /ws/articles` – receive newly posted articles in real time.
+
+To run the server locally:
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
