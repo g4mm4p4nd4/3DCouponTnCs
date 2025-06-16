@@ -23,3 +23,16 @@ Each coupon entitles the holder to request a single 3D printing project from Bea
 
 ## 6. Agreement
 By using the coupon, the holder agrees to these terms, ensuring a smooth process and allowing adequate time for project completion.
+
+## Monitoring
+
+The `flashintel` FastAPI application exposes Prometheus metrics on `/metrics` via
+`prometheus-fastapi-instrumentator`. Celery tasks can be monitored using Flower:
+
+```bash
+celery -A flashintel.celery_app flower
+```
+
+To visualize metrics with Grafana, add Prometheus as a data source in Grafana and
+import dashboards that target the application's metrics endpoint. Point the data
+source to the Prometheus server scraping the FastAPI application.
