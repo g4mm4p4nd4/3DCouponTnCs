@@ -23,3 +23,17 @@ The system is split into a **backend** for the API and background workers and a 
 4. The API and web interfaces will be available once the services build successfully.
 
 Detailed configuration will be added as each service is implemented.
+
+## Business & Entrepreneurial Value
+
+- **Efficiency and agility:** FlashIntel provides accessible trend intelligence and workflow automation for go-to-market teams, helping them make decisions quickly at low cost.
+- **Rapid market validation:** The combined backend, worker, and frontend architecture makes it easy to prototype and validate new ideas or features before full investment.
+- **Simplified deployment:** Docker Compose integration allows startups and small teams to spin up the entire stack with minimal overhead, reducing operational complexity.
+- **Open-source flexibility:** A transparent codebase invites contributions and customization for different industries or regions, fostering innovation and collaboration.
+
+## Consumer Value
+
+- **Easy setup:** With a single `docker-compose up` command, users can launch the entire platform for demos and testing without manual configuration.
+- **Comprehensive insights:** Support for Postgres, Redis, backend APIs, worker processors and a web frontend means users receive rich data and actionable insights.
+- **Actionable workflows:** Integrated message brokering and caching allow the system to deliver timely analytics and alerts that help marketing teams act confidently.
+- **Privacy & control:** Running services locally ensures sensitive business data remains under your control while benefiting from automation and intelligence.
